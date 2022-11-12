@@ -1,3 +1,5 @@
 #!/bin/bash
 
-nohup /usr/bin/python3 /data2/machine-learning/codes/app.py > /data2/machine-learning/logs/server_on.log & echo $! > /data2/machine-learning/logs/tmp.pid
+jupyter_pid=`cat /data2/machine-learning/logs/jupyter_id.pid` 
+
+kill "${jupyter_pid}"

@@ -251,7 +251,7 @@ def process_start(work_id, file_path, file_name, asset_type, req_type):
             # 학습 완료, 결과 파일 저장 후 API 호출
             try:
                 headers={'Content-type':'application/json', 'Accept':'application/json'}
-                return requests.post('http://172.25.0.12:9201/api/report/ml/analysis/complete', headers=headers, data=json.dumps({"work_id": work_id, "file_name": file_name, "file_path": file_path, "asset_type": asset_type, "result": "ok"}))
+                return requests.post('http://0.0.0.0:9201/api/report/ml/analysis/complete', headers=headers, data=json.dumps({"work_id": work_id, "file_name": file_name, "file_path": file_path, "asset_type": asset_type, "result": "ok"}))
             
             # 실패한 경우 에러 
             except (Exception) as e:
